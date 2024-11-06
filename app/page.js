@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import OurStrength from "./components/OurStrength";
+import FormInquiry from "./components/FormInquiry";
+import PhoneBtn from "./components/PhoneBtn";
 
 export default function Home() {
   return (
@@ -780,7 +782,7 @@ export default function Home() {
             </p>
           </Link>
 
-          {/* <PhoneBtn /> */}
+          <PhoneBtn />
 
           <div
             id="inquiry"
@@ -799,7 +801,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* <FormInquiry /> */}
+      <FormInquiry />
     </div>
   );
 }
