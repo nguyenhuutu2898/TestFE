@@ -51,3 +51,61 @@ body {
   /* background: #222; */
   scrollbar-gutter: stable both-edges;
 }
+
+#scrollbar {
+  overflow: auto;
+  height: 100dvh;
+  scrollbar-color: #c5c8ce transparent;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent !important;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c5c8ce;
+  border: 2px solid #c5c8ce;
+  border-radius: 4px;
+}
+
+#alert {
+  opacity: 0;
+  pointer-events: none;
+  transition: 1s;
+  -webkit-transition: 1s;
+}
+
+#alert.show {
+  opacity: 1;
+  pointer-events: all;
+  transition: 1s;
+  -webkit-transition: 1s;
+}
+
+#modal {
+  display: none;
+}
+
+#modal.show {
+  display: flex;
+}
+
+#modalTerm {
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+
+#modalTerm.show {
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
