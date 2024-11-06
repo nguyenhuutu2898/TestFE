@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import OurStrength from "./components/OurStrength";
 
 export default function Home() {
   return (
@@ -281,7 +282,7 @@ export default function Home() {
             </div>
 
             <div className="flex mt-[60px]">
-              {/* <OurStrength /> */}
+              <OurStrength />
             </div>
           </div>
         </div>
