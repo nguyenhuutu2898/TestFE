@@ -22,22 +22,22 @@ const Footer = () => {
     setModal(event);
   };
 
-  const initData = async () => {
-    try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API}/api/masterdata/settings`
-      );
-      const data = await res.json();
-      localStorage.setItem("settings", data?.data);
-      setData(data?.data);
-    } catch (error) {
-      console.log("error", error);
-    }
-  };
+//   const initData = async () => {
+//     try {
+//       const res = await fetch(
+//         `${process.env.NEXT_PUBLIC_API}/api/masterdata/settings`
+//       );
+//       const data = await res.json();
+//       localStorage.setItem("settings", data?.data);
+//       setData(data?.data);
+//     } catch (error) {
+//       console.log("error", error);
+//     }
+//   };
 
-  useEffect(() => {
-    initData();
-  }, []);
+//   useEffect(() => {
+//     initData();
+//   }, []);
   return (
     <div
       id="footer"
@@ -223,7 +223,7 @@ const Footer = () => {
             </div>
 
             <div className="term mt-[20px] overflow-y-auto overflow-x-hidden xl:max-h-[671px] h-full w-full max-h-[calc(100dvh-200px)] mr-[-24px] pr-[8px]">
-              {modal === "term" && (
+              {/* {modal === "term" && (
                 <div
                   dangerouslySetInnerHTML={{
                     __html: data?.service_terms_of_service,
@@ -237,7 +237,7 @@ const Footer = () => {
                     __html: data?.service_privacy_policy,
                   }}
                 ></div>
-              )}
+              )} */}
             </div>
           </div>
         </div>
