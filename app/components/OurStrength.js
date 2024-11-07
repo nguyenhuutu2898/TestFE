@@ -21,7 +21,17 @@ const OurStrength = () => {
   }, [step]);
 
   useEffect(() => {
-    setStep(1);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setStep((props) => props || 1);
+
+          return;
+        }
+      });
+    });
+    const ourStrength = document.getElementById("ourStrength");
+    observer.observe(ourStrength);
   }, []);
   return (
     <div className="flex justify-between w-full h-full">
