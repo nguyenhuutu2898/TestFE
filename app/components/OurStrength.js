@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const OurStrength = () => {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0);
 
   const handleStep = (value) => () => {
     setStep(value);
@@ -23,6 +23,10 @@ const OurStrength = () => {
   //   const ourStrength = document.getElementById("ourStrength");
   //   observer.observe(ourStrength);
   // }, []);
+
+  useEffect(() => {
+    setStep(1);
+  }, []);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
