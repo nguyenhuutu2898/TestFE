@@ -4,25 +4,25 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const OurStrength = () => {
-  const [step, setStep] = useState();
+  const [step, setStep] = useState(1);
 
   const handleStep = (value) => () => {
     setStep(value);
   };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setStep((props) => props || 1);
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         setStep((props) => props || 1);
 
-          return;
-        }
-      });
-    });
-    const ourStrength = document.getElementById("ourStrength");
-    observer.observe(ourStrength);
-  }, []);
+  //         return;
+  //       }
+  //     });
+  //   });
+  //   const ourStrength = document.getElementById("ourStrength");
+  //   observer.observe(ourStrength);
+  // }, []);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
