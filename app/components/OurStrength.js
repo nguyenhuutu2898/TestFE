@@ -1,14 +1,42 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const OurStrength = () => {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState();
 
   const handleStep = (value) => () => {
     setStep(value);
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setStep((props) => props || 1);
+
+          return;
+        }
+      });
+    });
+    const ourStrength = document.getElementById("ourStrength");
+    observer.observe(ourStrength);
+  }, []);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (step < 4) {
+        setStep(step + 1);
+      } else {
+        setStep(1);
+      }
+    }, 5000);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [step]);
   return (
     <div className="flex justify-between w-full h-full">
       <div className="w-[48px] relative mb-[90px]">
@@ -83,13 +111,15 @@ const OurStrength = () => {
           </div>
         </div>
 
-        <div
-          className={`${
-            step === 1 ? "bg-[#76A6FF]" : "bg-transparent"
-          } w-[5px] h-[82px] mx-auto rounded-b-[5px]`}
-        ></div>
+        <div className="h-[96px]">
+          <div
+            className={`${
+              step === 1 ? "animation1" : ""
+            } w-[5px] h-0 mx-auto rounded-b-[5px]`}
+          ></div>
+        </div>
 
-        <div className="relative z-[1] mt-[14px]">
+        <div className="relative z-[1]">
           <div
             className={`${
               step === 2
@@ -158,13 +188,15 @@ const OurStrength = () => {
           </div>
         </div>
 
-        <div
-          className={`${
-            step === 2 ? "bg-[#76A6FF]" : "bg-transparent"
-          } w-[5px] h-[82px] mx-auto rounded-b-[5px]`}
-        ></div>
+        <div className="h-[96px]">
+          <div
+            className={`${
+              step === 2 ? "animation1" : ""
+            } w-[5px] h-0 mx-auto rounded-b-[5px]`}
+          ></div>
+        </div>
 
-        <div className="relative z-[1] mt-[14px]">
+        <div className="relative z-[1]">
           <div
             className={`${
               step === 3
@@ -232,13 +264,15 @@ const OurStrength = () => {
           </div>
         </div>
 
-        <div
-          className={`${
-            step === 3 ? "bg-[#76A6FF]" : "bg-transparent"
-          } w-[5px] h-[82px] mx-auto rounded-b-[5px]`}
-        ></div>
+        <div className="h-[96px]">
+          <div
+            className={`${
+              step === 3 ? "animation1" : ""
+            } w-[5px] h-0 mx-auto rounded-b-[5px]`}
+          ></div>
+        </div>
 
-        <div className="relative z-[1] mt-[14px]">
+        <div className="relative z-[1]">
           <div
             className={`${
               step === 4
@@ -328,46 +362,55 @@ const OurStrength = () => {
         </div>
       </div>
 
-      <div className="flex-1 w-full h-full">
-        {step === 1 && (
+      <div className="flex-1 w-full h-fit relative">
+        {/* {step === 1 && ( */}
+        <div className="absolute top-0 w-full h-fit">
           <Image
             src={"https://cdn.presscon.ai/newlanding/image_step1.webp"}
             alt="image_step1"
             width={952}
             height={570}
-            className="max-w-[952px] max-h-[570px] h-full w-full ml-auto"
+            className={`max-w-[952px] max-h-[570px] h-full w-full ml-auto transition-all duration-300 ease-out ${
+              step === 1 ? "opacity-100" : "opacity-0"
+            }`}
           />
-        )}
+        </div>
 
-        {step === 2 && (
+        <div className="absolute top-0 w-full h-fit">
           <Image
             src={"https://cdn.presscon.ai/newlanding/image_step2.webp"}
             alt="image_step1"
             width={952}
             height={570}
-            className="max-w-[952px] max-h-[570px] h-full w-full ml-auto"
+            className={`max-w-[952px] max-h-[570px] h-full w-full ml-auto transition-all duration-300 ease-out ${
+              step === 2 ? "opacity-100" : "opacity-0"
+            }`}
           />
-        )}
+        </div>
 
-        {step === 3 && (
+        <div className="absolute top-0 w-full h-fit">
           <Image
             src={"https://cdn.presscon.ai/newlanding/image_step3.webp"}
             alt="image_step1"
             width={952}
             height={570}
-            className="max-w-[952px] max-h-[570px] h-full w-full ml-auto"
+            className={`max-w-[952px] max-h-[570px] h-full w-full ml-auto transition-all duration-300 ease-out ${
+              step === 3 ? "opacity-100" : "opacity-0"
+            }`}
           />
-        )}
+        </div>
 
-        {step === 4 && (
+        <div className="absolute top-0 w-full h-fit">
           <Image
             src={"https://cdn.presscon.ai/newlanding/image_step4.webp"}
             alt="image_step1"
             width={952}
             height={570}
-            className="max-w-[952px] max-h-[570px] h-full w-full ml-auto"
+            className={`max-w-[952px] max-h-[570px] h-full w-full ml-auto transition-all duration-300 ease-out ${
+              step === 4 ? "opacity-100" : "opacity-0"
+            }`}
           />
-        )}
+        </div>
       </div>
     </div>
   );

@@ -1,12 +1,8 @@
-// import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import OurStrength from "./components/OurStrength";
 import FormInquiry from "./components/FormInquiry";
+import OurStrength from "./components/OurStrength";
 import PhoneBtn from "./components/PhoneBtn";
-// const OurStrength = dynamic(() => import("./components/OurStrength"));
-// const PhoneBtn = dynamic(() => import("./components/PhoneBtn"));
-// const FormInquiry = dynamic(() => import("./components/FormInquiry"));
 
 export default function Home() {
   return (
@@ -267,7 +263,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-[#F1F6FF] mt-[66px] py-[120px]">
+        <div id="ourStrength" className="bg-[#F1F6FF] mt-[66px] py-[120px]">
           <div className="max-w-[1440px] w-full mx-auto">
             <p className="text-[24px] leading-[32px] font-bold text-[#8B99B1]">
               Our Strength

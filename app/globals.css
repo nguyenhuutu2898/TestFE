@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @font-face {
   font-family: "Pretendard";
   font-weight: 800;
@@ -36,6 +31,10 @@
   font-weight: 400;
   src: url("../public/fonts/Pretendard-Regular.woff2") format("woff2");
   font-display: swap;
+}
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -108,4 +107,11 @@ body {
   pointer-events: all;
   transition: 0.5s;
   -webkit-transition: 0.5s;
+}
+
+.animation1 {
+  background-color: #76a6ff;
+  height: 96px;
+  transition: height 5s;
+  transition-timing-function: linear;
 }
