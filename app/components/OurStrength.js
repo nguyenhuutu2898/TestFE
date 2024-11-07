@@ -24,9 +24,9 @@ const OurStrength = () => {
   //   observer.observe(ourStrength);
   // }, []);
 
-  useEffect(() => {
-    setStep(1);
-  }, []);
+  // useEffect(() => {
+  //   setStep(1);
+  // }, []);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
