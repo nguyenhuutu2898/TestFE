@@ -2,6 +2,15 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "./globals.css";
 
+export function generateViewport() {
+  return {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  };
+}
+
 export const metadata = {
   title: "PRESSCON Ai",
   description:
