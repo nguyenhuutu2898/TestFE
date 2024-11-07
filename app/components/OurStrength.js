@@ -10,24 +10,6 @@ const OurStrength = () => {
     setStep(value);
   };
 
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver((entries) => {
-  //     entries.forEach((entry) => {
-  //       if (entry.isIntersecting) {
-  //         setStep((props) => props || 1);
-
-  //         return;
-  //       }
-  //     });
-  //   });
-  //   const ourStrength = document.getElementById("ourStrength");
-  //   observer.observe(ourStrength);
-  // }, []);
-
-  // useEffect(() => {
-  //   setStep(1);
-  // }, []);
-
   useEffect(() => {
     const timeout = setTimeout(() => {
       if (step < 4) {
@@ -41,6 +23,10 @@ const OurStrength = () => {
       clearTimeout(timeout);
     };
   }, [step]);
+
+  useEffect(() => {
+    setStep(1);
+  }, []);
   return (
     <div className="flex justify-between w-full h-full">
       <div className="w-[48px] relative mb-[90px]">
