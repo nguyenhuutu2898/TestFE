@@ -12,11 +12,7 @@ const OurStrength = () => {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      if (step < 4) {
-        setStep(step + 1);
-      } else {
-        setStep(1);
-      }
+      setStep((prevStep) => (prevStep < 4 ? prevStep + 1 : 1));
     }, 5000);
 
     return () => {
