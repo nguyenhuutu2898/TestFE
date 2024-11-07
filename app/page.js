@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import OurStrength from "./components/OurStrength";
-import FormInquiry from "./components/FormInquiry";
-import PhoneBtn from "./components/PhoneBtn";
+// import OurStrength from "./components/OurStrength";
+// import FormInquiry from "./components/FormInquiry";
+// import PhoneBtn from "./components/PhoneBtn";
+const OurStrength = dynamic(() => import("./components/OurStrength"));
+const PhoneBtn = dynamic(() => import("./components/PhoneBtn"));
+const FormInquiry = dynamic(() => import("./components/FormInquiry"));
 
 export default function Home() {
   return (

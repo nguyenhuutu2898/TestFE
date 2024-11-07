@@ -44,8 +44,41 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          async
+          src="https://cdn.news.newshub.kr/sdk/site_tracking.js"
+        ></script>
+        {/* <script type="text/javascript" src="//wcs.naver.net/wcslog.js" /> */}
+        {/* <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (!wcs_add) var wcs_add={};
+              wcs_add["wa"] = "s_151359b91e87";
+              if (!_nasa) var _nasa={};
+              if(window.wcs){
+                wcs.inflow();
+                wcs_do();
+              }
+            `,
+          }}
+        />
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+                (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                })(window, document, "clarity", "script", "ojtqiqvd6x");
+            `,
+          }}
+        /> */}
+      </head>
       <body>
-        <Header/>
+        <Header />
         {children}
         <Footer />
       </body>
